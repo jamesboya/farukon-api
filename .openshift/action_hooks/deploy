@@ -17,8 +17,7 @@ fi
 if [ ! -d $OPENSHIFT_DATA_DIR/jdk1.8.0_20 ]
         then
                 cd $OPENSHIFT_DATA_DIR
-                wget http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-i586.tar.gz
-                # http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-i586.tar.gz?AuthParam=1432336241_fb5a40d4e88c9552cfc57256fe7c6392
+                wget http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-i586.tar.gz?AuthParam=1432336241_fb5a40d4e88c9552cfc57256fe7c6392
                 tar xvf *.tar.gz
                 rm -f *.tar.gz
 fi
