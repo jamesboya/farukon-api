@@ -13,5 +13,4 @@ export SERVER_PORT=${OPENSHIFT_DIY_PORT}
 export SERVER_ADDRESS=${OPENSHIFT_DIY_IP}
 
 cd $OPENSHIFT_REPO_DIR
-# nohup mvn spring-boot:run -s settings.xml -Dserver.port=${OPENSHIFT_DIY_PORT} -Dserver.address=${OPENSHIFT_DIY_IP} -Dspring.profiles.active=openshift &
-nohup java -jar target/*.jar&
+nohup java -jar target/*.jar &
