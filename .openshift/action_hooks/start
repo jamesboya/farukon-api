@@ -10,4 +10,4 @@ export MAVEN_OPTS="-Xms384m -Xmx412m"
 export PATH=$JAVA_HOME/bin:$M2:$PATH
 
 cd $OPENSHIFT_REPO_DIR
-nohup mvn spring-boot:run -Dserver.port=${OPENSHIFT_DIY_PORT} -Dserver.address=${OPENSHIFT_DIY_IP} -Dspring.profiles.active=openshift &
+nohup mvn spring-boot:run -s settings.xml -Dserver.port=${OPENSHIFT_DIY_PORT} -Dserver.address=${OPENSHIFT_DIY_IP} -Dspring.profiles.active=openshift &
