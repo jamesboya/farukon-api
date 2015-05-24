@@ -2,6 +2,7 @@ package com.farukon.resource.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,13 +13,11 @@ import java.util.Collections;
 import java.util.List;
 
 public class Resource {
-    @Id
-    private String id;
-
+    @Id private String id;
     private String url;
-    private String title;
-    private String summary;
     private List<String> images;
+    @TextIndexed private String title;
+    @TextIndexed private String summary;
 
     public Resource() {
         this.images = new ArrayList();
@@ -75,5 +74,16 @@ public class Resource {
 
     public void setSummary(String summary) {
         this.summary = summary;
+    }
+
+    @Override
+    public String toString() {
+        return "Resource{" +
+                "id='" + id + '\'' +
+                ", url='" + url + '\'' +
+                ", title='" + title + '\'' +
+                ", summary='" + summary + '\'' +
+                ", images=" + images +
+                '}';
     }
 }
