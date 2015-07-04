@@ -8,13 +8,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Resource {
     @Id private String id;
     private String url;
+    private Map<String, String> meta;
     private List<String> images;
     @TextIndexed private String title;
     @TextIndexed private String summary;
@@ -26,6 +25,7 @@ public class Resource {
     public Resource(String url) {
         this.url = url;
         this.images = new ArrayList();
+        this.meta = new HashMap<>();
     }
 
     public Resource(String id, String url, String title, String summary, List<String> images) {
@@ -50,6 +50,14 @@ public class Resource {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public Map<String, String> getMeta() {
+        return Collections.unmodifiableMap(meta);
+    }
+
+    public void setMeta(Map<String, String> meta) {
+        this.meta = meta;
     }
 
     public String getTitle() {
