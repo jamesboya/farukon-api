@@ -45,6 +45,6 @@ public class ResourceController {
 
     @RequestMapping("hello")
     public String hello() {
-        return "Hello!!";
+        return "Hello";
     }
 }
